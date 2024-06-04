@@ -24,9 +24,6 @@ class Habit(models.Model):
     expected_completion_time = models.IntegerField(verbose_name='время на выполнение')
     is_public = models.BooleanField(default=True, verbose_name='признак публичности')
 
-    def __str__(self):
-        return f'Привычка: {self.action}, время: {self.time}, место: {self.place}'
-
     class Meta:
         verbose_name = "Привычка"
         verbose_name_plural = "Привычки"

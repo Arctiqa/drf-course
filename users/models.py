@@ -6,7 +6,7 @@ class User(AbstractUser):
     username = None
 
     email = models.EmailField(unique=True, verbose_name='email')
-    telegram = models.CharField(max_length=90, verbose_name='telegram', null=True, blank=True)
+    telegram_id = models.CharField(max_length=90, verbose_name='telegram_id', null=True, blank=True)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
