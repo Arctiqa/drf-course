@@ -25,11 +25,12 @@ class CompletionTimeCheck:
 
 class OnlyPleasantInRelatedHabits:
     """В связанных привычках могут быть только приятные привычки"""
-    def __init__(self, field):
-        self.field = field
+    def __init__(self, field1, field2):
+        self.field1 = field1
+        self.field2 = field2
 
     def __call__(self, value):
-        if not value.get(self.field):
+        if value.get(self.field1) and not value.get(self.field2):
             raise ValidationError('В связанных привычках могут быть только приятные привычки')
 
 

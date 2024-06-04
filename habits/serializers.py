@@ -13,7 +13,7 @@ class HabitSerializer(serializers.ModelSerializer):
         validators = [
             RelatedOrRewardCheck(field1='related_habit', field2='reward'),
             CompletionTimeCheck(field='expected_completion_time'),
-            OnlyPleasantInRelatedHabits(field='is_pleasant'),
+            OnlyPleasantInRelatedHabits(field1='related_habit', field2='is_pleasant'),
             NoRewardOrRelatedForPleasantHabit(field1='is_pleasant', field2='reward'),
             HabitTimeCheck(field='periodicity')
         ]
